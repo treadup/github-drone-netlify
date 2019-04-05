@@ -1,0 +1,17 @@
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: python
+  environment:
+    NETLIFY_SITE_ID: 997365aa-9e35-47d1-8985-628eb64dfef9
+    NETLIFY_AUTH_TOKEN:
+      from_secret: NETLIFY_AUTH_TOKEN
+  commands:
+    # Create website
+    - pip install markdown2
+    - mkdir web
+    - markdown2 README.md > web/index.html
+    # Deploy website to netlify
+    - netlify deploy web/
