@@ -3,15 +3,17 @@ name: default
 
 steps:
 - name: build
-  image: python
+  image: node
   environment:
     NETLIFY_SITE_ID: 997365aa-9e35-47d1-8985-628eb64dfef9
     NETLIFY_AUTH_TOKEN:
       from_secret: NETLIFY_AUTH_TOKEN
   commands:
+    # Install netlify
+    - npm install -g netlify
     # Create website
-    - pip install markdown2
+    - npm install -g showdown
     - mkdir web
-    - markdown2 README.md > web/index.html
+    - showdown makehtml -i README.md -o web/index.html
     # Deploy website to netlify
     - netlify deploy web/
