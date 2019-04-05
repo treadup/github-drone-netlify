@@ -15,4 +15,4 @@ the NETLIFY_SITE_ID environment variable. The site id is printed when
 you run the netlify init command.
 
 ## Location
-This site is available at the following [url](https://drone-netlify.netlify.com/).
+This site is available at [https://drone-netlify.netlify.com/](https://drone-netlify.netlify.com/).

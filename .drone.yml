@@ -16,4 +16,4 @@ steps:
     - mkdir web
     - showdown makehtml -i README.md -o web/index.html
     # Deploy website to netlify
-    - netlify deploy --dir web
+    - netlify deploy --dir web --prod
