@@ -10,7 +10,7 @@ steps:
       from_secret: NETLIFY_AUTH_TOKEN
   commands:
     # Install netlify
-    - npm install -g netlify
+    - npm install -g netlify-cli
     # Create website
     - npm install -g showdown
     - mkdir web
